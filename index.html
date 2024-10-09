@@ -60,7 +60,8 @@
         align-items: center;
         justify-content: center;
       }
-      @media (max-width: 1150px) {
+
+      @media (max-width: 1380px) {
         #title {
           display: flex;
           justify-content: flex-start;
@@ -73,6 +74,8 @@
         }
         #responsive {
           width: 100vw;
+          min-height: 0;
+          font-size: 2rem;
         }
         .img-fluid {
           max-height: 30vh; /* Zmniejsz wysokość obrazu na małych ekranach */
@@ -81,6 +84,23 @@
           font-size: 3rem;
         }
         .miss {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 1000px) {
+        #responsive {
+          width: 100vw;
+          min-height: 0;
+          font-size: 1.5rem;
+        }
+
+        .miss {
+          font-size: 1.5rem;
+        }
+        p {
           font-size: 1.5rem;
         }
       }
@@ -95,7 +115,7 @@
     <div
       id="container"
       style="
-        height: 80vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -108,7 +128,7 @@
         style="border: double 10px rgb(0, 0, 0); height: 50vh; width: auto"
         src="img2.jpg"
       />
-      <div class="container-fluid" id="responsive" style="">
+      <div class="container-fluid" id="responsive" style="height: 30vh">
         Partia stworzona przez ludzi dla ludzi, w świecie gdzie rząd chce nas
         <p>kontrolować, dążmy do wolności, rynkowej jak i jednostkowej.</p>
       </div>
@@ -120,3 +140,4 @@
     ></script>
   </body>
 </html>
+
