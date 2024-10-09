@@ -24,7 +24,7 @@
         font-size: 5rem;
       }
       p {
-        font-size: 2rem;
+        font-size: 3rem;
       }
       body {
         margin: 0;
@@ -36,7 +36,11 @@
         height: 100vh;
         background: url("img1.jpg") no-repeat center center;
         background-size: auto 100vh; /* Obraz ma 100% wysokości, szerokość automatyczna */
-        background-color: black; /* Dodaj tło, jeśli obraz jest za mały, aby wypełnić całą szerokość */
+        background-color: rgb(
+          255,
+          249,
+          216
+        ); /* Dodaj tło, jeśli obraz jest za mały, aby wypełnić całą szerokość */
       }
       .start {
         height: 100vh;
@@ -45,20 +49,53 @@
         justify-content: center;
         flex-direction: column;
       }
-      #container {
+      #responsive {
+        text-align: center;
+        width: 50vw;
+        border: dashed 5px black;
+        margin: 25px;
+        display: flex;
+        font-size: 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 1150px) {
+        #title {
+          display: flex;
+          justify-content: flex-start;
+
+          flex-direction: column;
+        }
+        body {
+          background: url("img1.jpg") repeat center center;
+          background-size: cover;
+        }
+        #responsive {
+          width: 100vw;
+        }
+        .img-fluid {
+          max-height: 30vh; /* Zmniejsz wysokość obrazu na małych ekranach */
+        }
+        h1 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
       }
     </style>
   </head>
   <body class="start">
     <!-- Możesz dodać zawartość strony tutaj -->
-    <div class="text-center text-white">
+    <div id="title" class="container-fluid text-center text-white">
       <h1>Związek Wolnych Obywateli</h1>
       <p>Prawa jednostki ponad tyranią władzy.</p>
     </div>
     <div
       id="container"
       style="
-        height: 60vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -68,21 +105,10 @@
     >
       <img
         class="img-fluid"
-        style="border: double 10px rgb(0, 0, 0); height: 40vh; width: auto"
+        style="border: double 10px rgb(0, 0, 0); height: 50vh; width: auto"
         src="img2.jpg"
       />
-      <div
-        class="container-fluid"
-        style="
-          border: dashed 5px black;
-          margin: 25px;
-          display: flex;
-          font-size: 2rem;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        "
-      >
+      <div class="container-fluid" id="responsive" style="">
         Partia stworzona przez ludzi dla ludzi, w świecie gdzie rząd chce nas
         <p>kontrolować, dążmy do wolności, rynkowej jak i jednostkowej.</p>
       </div>
